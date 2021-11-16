@@ -39,7 +39,7 @@ object AppModule {
             getAllNotesUseCase = GetAllNotesUseCase(repository),
             deleteNoteUseCase = DeleteNoteUseCase(repository),
             addNoteUseCase = AddNoteUseCase(repository),
-            getNoteUseCase = GetNoteUseCase()
+            getNoteUseCase = GetNoteUseCase(repository)
         )
     }
 

@@ -1,6 +1,7 @@
 package com.example.notesplayground.presentation.notes
 
 
+
 import androidx.compose.animation.*
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -14,12 +15,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.BlendMode.Companion.Screen
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.notesplayground.presentation.notes.components.NoteItem
 import com.example.notesplayground.presentation.notes.components.OrderSection
+import com.example.notesplayground.presentation.util.Screen
 import kotlinx.coroutines.launch
 @ExperimentalAnimationApi
 @Composable
@@ -35,7 +36,7 @@ fun NotesScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                   // navController.navigate(Screen.AddEditNoteScreen.route)
+                    navController.navigate(Screen.AddEditNoteScreen.route)
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
@@ -55,7 +56,7 @@ fun NotesScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Your note",
+                    text = "Твои заметки",
                     style = MaterialTheme.typography.h4
                 )
                 IconButton(
@@ -92,17 +93,19 @@ fun NotesScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-//                                navController.navigate(
-//                                    Screen.AddEditNoteScreen.route +
-//                                            "?noteId=${note.id}&noteColor=${note.color}"
-//                                )
+                                navController.navigate(
+                                    Screen.AddEditNoteScreen.route +
+                                            "?noteId=${note.id}&noteColor=${note.color}"
+                                )
                             },
                         onDeleteClick = {
                             viewModel.onEvent(NotesEvent.DeleteNote(note))
                             scope.launch {
                                 val result = scaffoldState.snackbarHostState.showSnackbar(
-                                    message = "Note deleted",
-                                    actionLabel = "Undo"
+
+                                    message = "Заметка удалена",
+                                    actionLabel = "Отмена",
+
                                 )
                                 if(result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(NotesEvent.RestoreNote)
