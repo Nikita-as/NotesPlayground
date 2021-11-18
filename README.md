@@ -1,5 +1,5 @@
 # NotesPlayground
-Dagger-Hilt, MVVM, Room, Retrofit, Coroutines, Compose
+Application notes with use Dagger-Hilt, MVVM, Room, Retrofit, Coroutines, Compose, Clean, Unit tests
 
 NotesScreen
 
