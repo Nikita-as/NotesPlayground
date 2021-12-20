@@ -13,7 +13,7 @@ Add note
 
 ![2021-11-16_19-21-59](https://user-images.githubusercontent.com/80970900/142029340-a4bd56cd-6df2-4636-a237-f3da66778532.png)
 
-Delet note
+Delete note
 
 ![2021-11-16_19-22-16](https://user-images.githubusercontent.com/80970900/142029346-dca0ec16-42b7-4ac5-8c93-7c9a49b7b55a.png)
 )
